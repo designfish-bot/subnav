@@ -1,0 +1,99 @@
+     
+/* main.css */
+.subnav-container {
+  display: flex;
+  justify-content: center;
+  background-color: #FAFAFC;
+  padding: 10px 12px 10px 12px;
+  width: 100%; /* Hintergrund bleibt über gesamte Breite */
+}
+
+.subnav-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  width: 100%; /* Begrenzung des Inhalts mit z. B. max-width: 80%; */
+}
+
+.subnav-container img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .subnav-container a {
+      text-decoration: none;
+    }
+    
+    .subnav-item {
+      display: flex;
+      /* flex: 1; */
+      flex: 1 1 calc(16% - 12px); /* Standard: 6 Items pro Zeile */
+      max-width: 160px; /* Verhindert zu kleine Items */
+      flex-direction: column;  /* Stellt sicher, dass das Bild und der Button untereinander sind */
+      align-items: center;     /* Zentriert das Bild und den Button innerhalb des Items */
+      flex: 1 1 2%;              /* Verhindert das Umbruchverhalten der Items */
+      text-align: center;
+      flex-shrink: 1;
+    }
+
+    .subnav-item.dead {
+      display: flex;
+      flex: 1;
+      flex-direction: column;  /* Stellt sicher, dass das Bild und der Button untereinander sind */
+      align-items: center;     /* Zentriert das Bild und den Button innerhalb des Items */
+      flex: 1 1 2%;              /* Verhindert das Umbruchverhalten der Items */
+      text-align: center;
+      flex-shrink: 1;
+      pointer-events: none;
+    }
+    
+    .button-link {
+      padding: 6px 8px;
+      background-color: transparent;
+      color: #6e6e73;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 100px;
+      border-color: rgb(206, 212, 218);
+      cursor: pointer;
+      font-size: 12px;
+      letter-spacing: 0.02rem;
+      white-space: nowrap;
+      width: 100%;
+    }
+    
+    .button-link:hover {
+      background-color: #f1f1f1;
+      color: #000000;
+    }
+
+    .button-link.dead {
+          padding: 6px 8px;
+          background-color: transparent;
+          color: #003C85;
+          border-width: 1px;
+          border-style: solid;
+          border-radius: 100px;
+          border-color: #003C85;
+          cursor: pointer;
+          font-size: 12px;
+          letter-spacing: 0.02rem;
+          font-weight: bold;
+          white-space: nowrap;
+          width: 100%;
+          pointer-events: none;
+        }
+
+    /* Responsive Anpassung */
+@media (max-width: 1024px) {
+  .subnav-item { flex: 1 1 23%; } /* Etwas mehr Abstand */
+}
+@media (max-width: 768px) {
+  .subnav-item { flex: 1 1 48%; } /* Zwei Spalten */
+}
+@media (max-width: 400px) {
+  .subnav-item { flex: 1 1 100%; } /* Eine Spalte */
+}
+ 
